@@ -115,7 +115,7 @@ if user_input:
                 elif status == 404:
                     response = "Model not available. Check the Gemini model name."
                 else:
-                    response = f"API request failed (HTTP {status})."
+                   response = f"API request failed (HTTP {status}): {error.response.text}"
 
             except requests.exceptions.RequestException:
                 response = "Network error. Please try again."
