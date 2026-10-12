@@ -1,0 +1,19 @@
+🚀 Module 3 Project — AI Chat Companion | LLM APIs & Application Development
+
+I built an AI Chat Companion using Python and Streamlit as part of Module 3 of my Generative AI learning journey.
+
+What I implemented:
+🔹 LLM API integration and secure environment-based authentication
+🔹 Chat UI with user input and AI responses (when an API key is configured)
+🔹 Conversation history with system, user and assistant messages
+🔹 Custom instructions and adjustable response settings
+🔹 Token usage tracking and illustrative API cost estimation
+🔹 Error handling for authentication, rate limits and connectivity
+🔹 A clearly labeled demo mode when no API key is configured
+
+This project helped me understand how an LLM-powered application is structured, how API requests work, and why safe key handling and cost awareness matter.
+
+GitHub: [ADD YOUR REPOSITORY LINK]
+Live demo: [ADD YOUR DEPLOYED WEBSITE LINK]
+
+#GenerativeAI #LLM #Python #Streamlit #APIs #AIChatbot #PromptEngineering #Internship #LearningByBuilding
