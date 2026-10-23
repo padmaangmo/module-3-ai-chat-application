@@ -68,13 +68,31 @@ if user_input:
                     }
                 }
 
-                response = requests.post(
-                    url,
-                    headers={"x-goog-api-key": api_key},
-                    json=payload,
-                    timeout=60
-                )
-                response.raise_for_status()
+                
+import time
+
+for attempt in range(3):
+    try:
+        response = requests.post(
+            url,
+            headers={"x-goog-api-key": api_key},
+            json=payload,
+            timeout=30
+        )
+
+        if response.status_code in (429, 500, 502, 503, 504):
+            if attempt < 2:
+                time.sleep(2 ** attempt)
+                continue
+
+        response.raise_for_status()
+        break
+
+    except requests.exceptions.Timeout:
+        if attempt == 2:
+            raise
+        time.sleep(2 ** attempt)
+
 
                 data = response.json()
                 answer = data["candidates"][0]["content"]["parts"][0]["text"]
